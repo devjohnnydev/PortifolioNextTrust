@@ -12,9 +12,10 @@ fi
 echo "📦 Fazendo build do frontend..."
 npx vite build --config vite.config.localweb.ts
 
-# Copiar .htaccess para a pasta de build
-echo "📋 Copiando .htaccess..."
+# Copiar .htaccess e favicon para a pasta de build
+echo "📋 Copiando .htaccess e favicon..."
 cp public/.htaccess dist-localweb/
+cp public/favicon.png dist-localweb/
 
 echo "✅ Build concluído!"
 echo ""
