@@ -61,28 +61,33 @@ const services = [
 
 export function Services() {
   return (
-    <section id="servicos" className="py-20 lg:py-32 bg-card">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-            Sua TI mais inteligente começa com a NextTrust
+    <section id="servicos" className="py-24 lg:py-32 bg-card/30 backdrop-blur-sm relative overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(6,182,212,0.1),transparent_70%)]" />
+      
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-20">
+          <div className="inline-block mb-4">
+            <span className="text-sm font-semibold text-primary uppercase tracking-wider">Nossos Serviços</span>
+          </div>
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-8 bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
+            Sua TI mais inteligente<br />começa com a NextTrust
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Soluções completas e personalizadas para a transformação digital do seu negócio
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
             <Card 
               key={index} 
-              className="p-6 hover-elevate transition-all duration-300 group"
+              className="p-8 hover-elevate transition-all duration-300 group border-primary/10 bg-background/50 backdrop-blur-sm"
               data-testid={`card-service-${index}`}
             >
-              <div className="mb-4 p-3 rounded-lg bg-primary/10 inline-block group-hover:bg-primary/20 transition-colors">
-                <service.icon className="h-6 w-6 text-primary" />
+              <div className="mb-5 p-4 rounded-xl bg-gradient-to-br from-primary/10 to-chart-2/10 inline-block group-hover:from-primary/20 group-hover:to-chart-2/20 transition-all">
+                <service.icon className="h-7 w-7 text-primary" />
               </div>
-              <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
+              <h3 className="text-xl font-bold mb-4 group-hover:text-primary transition-colors">{service.title}</h3>
               <p className="text-muted-foreground leading-relaxed">{service.description}</p>
             </Card>
           ))}
